@@ -1,15 +1,16 @@
 //EXERCICE GUESS THE NUMBER
 
-//role : genere un nombre aléatoire
+//role : generer un nombre aléatoire
 //besoin : rien
 //rendre : un nombre aléatoire
 
 
-function chiffreAléatoire(x){
+function chiffreAleatoire() {
 
-//arrondir et choisir un nombre aléatoire
+    //arrondir et choisir un nombre aléatoire
 
-return Math.floor(Math.random(1)* 20);
+    //dans math random le dernier nombre est toujours en -1
+    return Math.floor(Math.random() * 21);
 
 }
 
@@ -21,13 +22,13 @@ return Math.floor(Math.random(1)* 20);
 //rendre : le nombre que le joueur a mis
 
 
-function reponse(){
+function reponseJ() {
 
-prompt("écrivez un nombre entre 1 et 20 s'il vous plaît")
+    let reponsePrompt = parseInt(prompt("écrivez un nombre entre 1 et 20 s'il vous plaît"))
 
-//rendre le nombre choisi
+    //rendre le nombre choisi
 
-return prompt;
+    return reponsePrompt;
 
 }
 
@@ -35,57 +36,62 @@ return prompt;
 
 
 //role :il compare le nombre aléatoire avec la réponse
-//besoin : de la réponse et de commentaire
+//besoin : du chiffre aléatoire et de la reponse de l'utilisateur
 //rendre : commentaire
 
 
 
 //compare nombre aléatoire avec la réponse de l'utilisateur
 
-function compareNombre(){
+function compareNombre(nombreOrdi, reponsePrompt) {
 
-    //si le nombre aléatoire est plus grand que la reponse alors cela écrit "plus grand"
+    //si la réponse de l'utilisateur est supérieur a 20 le message erreur s'affiche
 
+if(reponsePrompt>20){  //si le nombre aléatoire est plus grand que la reponse alors cela écrit "plus grand"
 
-    if(nombreOrdi>reponseUser){
+    alert("erreur")
+
+      //si le nombre aléatoire est plus grand que la reponse alors cela écrit "plus grand"
+
+}if (nombreOrdi > reponsePrompt) {
 
         alert("plus grand")
 
         //si le nombre aléatoire est plus petit que la reponse alors cela écrit "plus petit"
 
-    }else if(nombreOrdi<reponseUser){
+    } else if (nombreOrdi < reponsePrompt) {
 
-alert("plus petit")
+        alert("plus petit")
 
-//si le nombre aléatoire est égal que la reponse alors cela écrit "bravo"
+        //si le nombre aléatoire est égal que la reponse alors cela écrit "bravo"
 
-    }else{
+    } else{
 
-alert("Bravo")
+        alert("Bravo")
 
     }
 }
 
 //role :exécuter le scenario
-//besoin :nombre aléatoire et choisi
+//besoin :rien
 //rendre :rien
 
-function scenario(){
+function scenario() {
 
     //variable du chiffre aléatoire
 
-    let nombreOrdi = chiffreAléatoire(x);
+    let nombreOrdi = chiffreAleatoire();
 
     //variable de la reponse
 
-let reponse = reponseUser
+    let reponsePrompt = reponseJ()
+
+    //variable de la comparaison(toujours mettre quoi comparé)
+
+    let compareReponse = compareNombre(nombreOrdi, reponsePrompt)
 
 }
 
 //appeler la fonction scenario
 
-scenario
-
-
-
-    
+scenario()
